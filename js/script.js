@@ -12,6 +12,35 @@ function palindromo(parolaOK) {
     for(var i = parolaOK.length - 1; i >= 0; i--){
         parolaverifica += parolaOK.charAt(i);
     }
-    
+
     return parolaOK == parolaverifica;
+}
+
+// secondo
+
+var scelta = prompt('pari/dispari');
+console.log(scelta);
+var numeromio = parseInt(prompt('Inserisci un numero da 1 a 5'));
+console.log(numeromio);
+var numeroPc = getRndInteger(1, 5);
+console.log(numeroPc);
+
+
+document.getElementById('pd-user').innerHTML += scelta;
+document.getElementById('numero-user').innerHTML += numeromio;
+document.getElementById('numero-pc').innerHTML += numeroPc;
+
+
+if(pari(numeromio + numeroPc) && scelta == 'pari' || !pari(numeromio + numeroPc) && scelta == 'dispari'){
+    document.getElementById('risultato').innerHTML = 'Hai vinto';
+} else {
+    document.getElementById('risultato').innerHTML = 'Hai perso';
+}
+
+function getRndInteger(min, max) {
+    return Math.floor(Math.random() * (max - min + 1) ) + min;
+}
+
+function pari(numero) {
+    return numero % 2 == 0;
 }
