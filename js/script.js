@@ -22,8 +22,9 @@ var scelta = prompt('pari/dispari');
 console.log(scelta);
 var numeromio = parseInt(prompt('Inserisci un numero da 1 a 5'));
 console.log(numeromio);
-var numeroPc = getRndInteger(1, 5);
+var numeroPc = numerorandom(1, 5);
 console.log(numeroPc);
+var somma = sommanumeri(numeromio,numeroPc)
 
 
 document.getElementById('pd-user').innerHTML += scelta;
@@ -37,7 +38,11 @@ if(pari(numeromio + numeroPc) && scelta == 'pari' || !pari(numeromio + numeroPc)
     document.getElementById('risultato').innerHTML = 'Hai perso';
 }
 
-function getRndInteger(min, max) {
+function sommanumeri(num1,num2){
+    return somma = num1 + num2;
+}
+
+function numerorandom(min, max) {
     return Math.floor(Math.random() * (max - min + 1) ) + min;
 }
 
